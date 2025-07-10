@@ -45,7 +45,7 @@ export function TestimonialsSection() {
       company: "Quantum Capital",
       avatar: "/placeholder.svg?height=60&width=60",
       content:
-        "VINANCE's AI arbitrage system has revolutionized our trading operations. The sophisticated algorithms consistently identify profitable opportunities across multiple exchanges, delivering exceptional returns with minimal risk exposure.",
+        "WhiteRock's AI arbitrage system has revolutionized our trading operations. The sophisticated algorithms consistently identify profitable opportunities across multiple exchanges, delivering exceptional returns with minimal risk exposure.",
       rating: 5,
       profit: "+$127,450",
       timeframe: "Q4 2024",
@@ -135,7 +135,7 @@ export function TestimonialsSection() {
             </Badge>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
-            Industry Leaders Choose VINANCE
+            Industry Leaders Choose WhiteRock24
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Discover how institutional traders, hedge funds, and professional

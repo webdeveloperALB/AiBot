@@ -93,7 +93,7 @@ export function CTASection() {
 
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
                   Join the elite community of professional traders using
-                  VINANCE's institutional-grade platform. Advanced AI,
+                  WhiteRock's institutional-grade platform. Advanced AI,
                   lightning-fast execution, and comprehensive risk management
                   tools.
                 </p>

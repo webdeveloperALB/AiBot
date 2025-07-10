@@ -134,7 +134,7 @@ export function FeaturesSection() {
             Built for Professional Traders
           </h2>
           <p className="text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-12">
-            VINANCE delivers institutional-grade trading infrastructure,
+            WhiteRock delivers institutional-grade trading infrastructure,
             quantitative strategies, and capital access to professional traders
             and financial institutions worldwide. Every feature is designed for
             scale, performance, and profitability.

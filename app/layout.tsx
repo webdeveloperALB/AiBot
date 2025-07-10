@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "VINANCE - Advanced Crypto Trading Platform",
+  title: "WhiteRock24 - Advanced Crypto Trading Platform",
   description:
     "Professional crypto trading with AI arbitrage, staking rewards, prop firm challenges, and prediction markets",
     generator: 'v0.dev'
