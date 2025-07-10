@@ -44,29 +44,7 @@ export function CTASection() {
     },
   ];
 
-  const features = [
-    {
-      icon: TrendingUp,
-      title: "Advanced Analytics",
-      description: "Real-time market insights and AI-powered trading signals",
-    },
-    {
-      icon: Zap,
-      title: "Lightning Execution",
-      description:
-        "Sub-millisecond order execution with institutional liquidity",
-    },
-    {
-      icon: BarChart3,
-      title: "Portfolio Management",
-      description: "Comprehensive risk management and performance tracking",
-    },
-    {
-      icon: Users,
-      title: "Dedicated Support",
-      description: "24/7 professional support and account management",
-    },
-  ];
+
 
   const stats = [
     { value: "500K+", label: "Active Traders" },
@@ -84,7 +62,7 @@ export function CTASection() {
 
       <div className="max-w-7xl mx-auto relative">
         {/* Main CTA Card */}
-        <Card className="bg-black border border-slate-700/50 backdrop-blur-xl shadow-2xl mb-20">
+        <Card className="bg-transparent border border-none backdrop-blur-xl shadow-2xl mb-20">
           <CardContent className="p-12 md:p-16 lg:p-20">
             <div className="text-center space-y-12">
               {/* Header */}
@@ -193,51 +171,7 @@ export function CTASection() {
           </CardContent>
         </Card>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {features.map((feature, index) => (
-            <Card
-              key={index}
-              className="bg-slate-900/50 border border-slate-800/50 backdrop-blur-sm hover:bg-slate-900/70 transition-all duration-300"
-            >
-              <CardContent className="p-6 text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl mb-4">
-                  <feature.icon className="h-6 w-6 text-blue-400" />
-                </div>
-                <h3 className="font-semibold text-white mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
 
-        {/* Trust Indicators */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {trustIndicators.map((indicator, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-4 p-6 bg-slate-900/30 rounded-xl border border-slate-800/50 backdrop-blur-sm"
-            >
-              <div className="flex-shrink-0">
-                <div className="w-10 h-10 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 rounded-lg flex items-center justify-center">
-                  <indicator.icon className="h-5 w-5 text-emerald-400" />
-                </div>
-              </div>
-              <div>
-                <div className="font-semibold text-white text-sm">
-                  {indicator.label}
-                </div>
-                <div className="text-xs text-slate-400">
-                  {indicator.description}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
         {/* Bottom Section */}
         <div className="text-center space-y-8">

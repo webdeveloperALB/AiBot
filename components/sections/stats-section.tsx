@@ -182,65 +182,6 @@ export function StatsSection() {
           )}
         </div>
 
-        {/* Operational Excellence Section */}
-        <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-3xl p-12">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Operational Excellence
-            </h3>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Industry-leading infrastructure metrics that power seamless
-              trading experiences
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {operationalStats.map(
-              ({ icon: Icon, value, label, description }, index) => (
-                <div
-                  key={index}
-                  className="text-center group hover:bg-gray-800/50 p-6 rounded-xl transition-all duration-300 border border-transparent hover:border-gray-700"
-                >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gray-800 border border-gray-700 text-gray-400 mb-4 group-hover:bg-gray-700 group-hover:text-white group-hover:border-gray-600 transition-all">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">
-                    {value}
-                  </div>
-                  <div className="text-gray-300 font-semibold mb-2">
-                    {label}
-                  </div>
-                  <div className="text-sm text-gray-500">{description}</div>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-8 px-8 py-4 bg-gray-900/80 border border-gray-800 rounded-2xl backdrop-blur-sm">
-            <div className="flex items-center gap-2">
-              <Shield className="h-5 w-5 text-emerald-400" />
-              <span className="text-sm font-semibold text-gray-300">
-                SOC 2 Type II Certified
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Award className="h-5 w-5 text-cyan-400" />
-              <span className="text-sm font-semibold text-gray-300">
-                ISO 27001 Compliant
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-purple-400" />
-              <span className="text-sm font-semibold text-gray-300">
-                99.99% SLA Guarantee
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* Subtle background pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.02),transparent_50%)] pointer-events-none" />
       </div>
