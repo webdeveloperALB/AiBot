@@ -62,7 +62,7 @@ export function Navbar() {
             >
               Sign In
             </Button>
-            <Button className="bg-gradient-to-r from-cyan-600 to-pink-600 hover:from-cyan-500 hover:to-pink-500">
+            <Button className="bg-black">
               Get Started
             </Button>
           </div>
@@ -100,7 +100,7 @@ export function Navbar() {
               >
                 Sign In
               </Button>
-              <Button className="bg-gradient-to-r from-cyan-600 to-pink-600 hover:from-cyan-500 hover:to-pink-500">
+              <Button className="bg-transparent">
                 Get Started
               </Button>
             </div>

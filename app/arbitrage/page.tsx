@@ -1,19 +1,9 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Switch } from "@/components/ui/switch";
 import { Progress } from "@/components/ui/progress";
 import {
   Bot,
@@ -21,13 +11,16 @@ import {
   DollarSign,
   Zap,
   Target,
-  Settings,
   Play,
   Pause,
-  BarChart3,
   Activity,
-  Wallet,
   Clock,
+  Shield,
+  Award,
+  Users,
+  Star,
+  CheckCircle,
+  Globe,
 } from "lucide-react";
 
 export default function ArbitragePage() {
@@ -36,6 +29,7 @@ export default function ArbitragePage() {
   const [riskLevel, setRiskLevel] = useState("medium");
   const [maxInvestment, setMaxInvestment] = useState("10000");
   const [minProfit, setMinProfit] = useState("0.5");
+
   const [realTimeData, setRealTimeData] = useState({
     totalProfit: 12847.56,
     todayProfit: 234.78,
@@ -304,9 +298,9 @@ export default function ArbitragePage() {
           </Card>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-2">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Main Content - Takes up remaining space */}
+          <div className="flex-1">
             <Tabs defaultValue="opportunities" className="space-y-6">
               <TabsList className="grid w-full grid-cols-3 bg-gray-900/50 border-gray-700/30">
                 <TabsTrigger
@@ -516,165 +510,105 @@ export default function ArbitragePage() {
             </Tabs>
           </div>
 
-          {/* Settings Panel */}
-          <div className="space-y-6">
-            {/* Robot Configuration */}
-            <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Settings className="h-5 w-5 mr-2" />
-                  Robot Settings
+          {/* Professional Marketing Content - Fixed width sidebar */}
+          <div className="lg:w-80 lg:flex-shrink-0 space-y-6">
+            {/* Why Choose Us */}
+            <Card className="bg-black border-blue-500/30 backdrop-blur-sm">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-white flex items-center text-lg">
+                  <Award className="h-5 w-5 mr-2 text-yellow-400" />
+                  Industry Leader
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <label className="text-gray-400 text-sm mb-2 block">
-                    Trading Strategy
-                  </label>
-                  <Select
-                    value={selectedStrategy}
-                    onValueChange={setSelectedStrategy}
-                  >
-                    <SelectTrigger className="bg-gray-900/80 border-gray-600/30 text-white">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent className="bg-gray-900 border-gray-600">
-                      {strategies.map((strategy) => (
-                        <SelectItem
-                          key={strategy.id}
-                          value={strategy.id}
-                          className="text-white hover:bg-gray-800"
-                        >
-                          {strategy.name}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-yellow-400 mb-1">
+                    #1
+                  </div>
+                  <p className="text-gray-300 text-sm">
+                    Rated arbitrage platform
+                  </p>
                 </div>
-
-                <div>
-                  <label className="text-gray-400 text-sm mb-2 block">
-                    Risk Level
-                  </label>
-                  <Select value={riskLevel} onValueChange={setRiskLevel}>
-                    <SelectTrigger className="bg-gray-900/80 border-gray-600/30 text-white">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent className="bg-gray-900 border-gray-600">
-                      <SelectItem
-                        value="low"
-                        className="text-white hover:bg-gray-800"
-                      >
-                        Low Risk
-                      </SelectItem>
-                      <SelectItem
-                        value="medium"
-                        className="text-white hover:bg-gray-800"
-                      >
-                        Medium Risk
-                      </SelectItem>
-                      <SelectItem
-                        value="high"
-                        className="text-white hover:bg-gray-800"
-                      >
-                        High Risk
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-green-400">
+                      500K+
+                    </div>
+                    <div className="text-gray-400 text-xs">Trades Executed</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-blue-400">
+                      $50M+
+                    </div>
+                    <div className="text-gray-400 text-xs">Volume Traded</div>
+                  </div>
                 </div>
-
-                <div>
-                  <label className="text-gray-400 text-sm mb-2 block">
-                    Max Investment ($)
-                  </label>
-                  <Input
-                    value={maxInvestment}
-                    onChange={(e) => setMaxInvestment(e.target.value)}
-                    className="bg-gray-900/80 border-gray-600/30 text-white placeholder:text-gray-500"
-                    placeholder="10000"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-gray-400 text-sm mb-2 block">
-                    Min Profit (%)
-                  </label>
-                  <Input
-                    value={minProfit}
-                    onChange={(e) => setMinProfit(e.target.value)}
-                    className="bg-gray-900/80 border-gray-600/30 text-white placeholder:text-gray-500"
-                    placeholder="0.5"
-                  />
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-400 text-sm">
-                    Auto-execute trades
-                  </span>
-                  <Switch />
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-400 text-sm">
-                    Email notifications
-                  </span>
-                  <Switch />
-                </div>
-
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  Save Settings
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                  Start Trading Now
                 </Button>
               </CardContent>
             </Card>
 
-            {/* Account Overview */}
-            <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Wallet className="h-5 w-5 mr-2" />
-                  Account Overview
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Available Balance</span>
-                  <span className="text-white font-bold">$25,847.23</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Allocated to Robot</span>
-                  <span className="text-blue-400 font-bold">$10,000.00</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Total Profit</span>
-                  <span className="text-green-400 font-bold">+$12,847.56</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">ROI</span>
-                  <span className="text-green-400 font-bold">+128.5%</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Quick Actions */}
-            <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-white">Quick Actions</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <Button className="w-full bg-green-600 hover:bg-green-700">
-                  <DollarSign className="h-4 w-4 mr-2" />
-                  Add Funds
-                </Button>
-                <Button className="w-full bg-yellow-600 hover:bg-yellow-700">
-                  <BarChart3 className="h-4 w-4 mr-2" />
-                  View Reports
-                </Button>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">
-                  <Bot className="h-4 w-4 mr-2" />
-                  Optimize Strategy
-                </Button>
-              </CardContent>
-            </Card>
+            {/* Combined Advantages and Success */}
+            <div className="grid grid-cols-1 gap-6">
+              {/* Competitive Advantages */}
+              <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-white flex items-center text-lg">
+                    <Shield className="h-5 w-5 mr-2 text-green-400" />
+                    Our Advantages
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                      <div>
+                        <div className="text-white font-medium text-sm">
+                          Military Security
+                        </div>
+                        <div className="text-gray-400 text-xs">
+                          Bank-level encryption
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                      <div>
+                        <div className="text-white font-medium text-sm">
+                          Lightning Speed
+                        </div>
+                        <div className="text-gray-400 text-xs">
+                          Sub-millisecond execution
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                      <div>
+                        <div className="text-white font-medium text-sm">
+                          AI Intelligence
+                        </div>
+                        <div className="text-gray-400 text-xs">
+                          Advanced ML algorithms
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                      <div>
+                        <div className="text-white font-medium text-sm">
+                          24/7 Support
+                        </div>
+                        <div className="text-gray-400 text-xs">
+                          Expert specialists
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
 
