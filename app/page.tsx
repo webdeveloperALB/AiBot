@@ -1,4 +1,4 @@
-import { HeroSection } from "@/components/sections/hero-section"
+import { EnhancedHeroSection } from "@/components/sections/hero-section"
 import { FeaturesSection } from "@/components/sections/features-section"
 import { StatsSection } from "@/components/sections/stats-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <HeroSection />
+      <EnhancedHeroSection />
 
       {/* Features Section */}
       <FeaturesSection />

@@ -1,10 +1,8 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -24,6 +22,21 @@ import {
   TrendingDown,
   Play,
   Pause,
+  Shield,
+  Clock,
+  Users,
+  Globe,
+  Smartphone,
+  Lock,
+  AlertTriangle,
+  Info,
+  TrendingUpIcon,
+  Calculator,
+  Eye,
+  Award,
+  Star,
+  Headphones,
+  GraduationCap,
 } from "lucide-react";
 
 // Type definitions
@@ -71,7 +84,6 @@ export default function TradingPage() {
     const data: CandleData[] = [];
     let basePrice = 106000;
     const now = Date.now();
-
     for (let i = 0; i < 50; i++) {
       const timestamp = now - (50 - i) * 60000; // 1 minute intervals
       const open = basePrice + (Math.random() - 0.5) * 500;
@@ -120,7 +132,6 @@ export default function TradingPage() {
           if (newData.length > 0) {
             const lastCandle = newData[newData.length - 1];
             const newPrice = lastCandle.close + (Math.random() - 0.5) * 200;
-
             // Update last candle
             newData[newData.length - 1] = {
               ...lastCandle,
@@ -130,7 +141,6 @@ export default function TradingPage() {
               isGreen: newPrice >= lastCandle.open,
             };
           }
-
           return newData;
         });
       }
@@ -261,6 +271,113 @@ export default function TradingPage() {
     },
   ];
 
+  const serviceFeatures = [
+    {
+      icon: <Shield className="h-8 w-8" />,
+      title: "Bank-Grade Security",
+      description:
+        "Multi-layer security with cold storage, 2FA, and insurance coverage up to $100M",
+      stats: "99.9% Uptime",
+      color: "text-green-400",
+    },
+    {
+      icon: <Clock className="h-8 w-8" />,
+      title: "24/7 Global Trading",
+      description:
+        "Trade cryptocurrencies around the clock with global market access",
+      stats: "150+ Trading Pairs",
+      color: "text-blue-400",
+    },
+    {
+      icon: <Users className="h-8 w-8" />,
+      title: "Expert Support",
+      description:
+        "Dedicated account managers and 24/7 multilingual customer support",
+      stats: "5M+ Active Users",
+      color: "text-purple-400",
+    },
+    {
+      icon: <Globe className="h-8 w-8" />,
+      title: "Global Liquidity",
+      description:
+        "Access to deep liquidity pools and institutional-grade order matching",
+      stats: "$50B+ Daily Volume",
+      color: "text-orange-400",
+    },
+    {
+      icon: <Smartphone className="h-8 w-8" />,
+      title: "Mobile Trading",
+      description:
+        "Full-featured mobile apps for iOS and Android with push notifications",
+      stats: "4.8★ App Rating",
+      color: "text-cyan-400",
+    },
+    {
+      icon: <Lock className="h-8 w-8" />,
+      title: "Regulatory Compliance",
+      description:
+        "Fully licensed and regulated in multiple jurisdictions worldwide",
+      stats: "SOC 2 Certified",
+      color: "text-red-400",
+    },
+  ];
+
+  const tradingTips = [
+    {
+      icon: <Target className="h-5 w-5" />,
+      title: "Risk Management",
+      description:
+        "Never risk more than 2-3% of your portfolio on a single trade",
+      color: "text-red-400",
+    },
+    {
+      icon: <TrendingUpIcon className="h-5 w-5" />,
+      title: "Follow the Trend",
+      description: "The trend is your friend - trade with market momentum",
+      color: "text-green-400",
+    },
+    {
+      icon: <Calculator className="h-5 w-5" />,
+      title: "Position Sizing",
+      description: "Calculate your position size before entering any trade",
+      color: "text-blue-400",
+    },
+    {
+      icon: <Eye className="h-5 w-5" />,
+      title: "Market Analysis",
+      description:
+        "Combine technical and fundamental analysis for better decisions",
+      color: "text-purple-400",
+    },
+  ];
+
+  const platformBenefits = [
+    {
+      icon: <Award className="h-6 w-6" />,
+      title: "Industry Leading",
+      description: "Trusted by over 5 million traders worldwide",
+      color: "text-yellow-400",
+    },
+    {
+      icon: <Shield className="h-6 w-6" />,
+      title: "Secure Trading",
+      description: "Bank-grade security with insurance protection",
+      color: "text-green-400",
+    },
+    {
+      icon: <Headphones className="h-6 w-6" />,
+      title: "24/7 Support",
+      description: "Expert support team available around the clock",
+      color: "text-blue-400",
+    },
+    {
+      icon: <GraduationCap className="h-6 w-6" />,
+      title: "Learn & Earn",
+      description: "Free educational resources and trading courses",
+      color: "text-purple-400",
+    },
+  ];
+
   // Helper function to safely get price data
   const getCurrentPrice = (pair: string) => {
     return prices[pair] || { price: 0, change: 0 };
@@ -269,6 +386,71 @@ export default function TradingPage() {
   return (
     <div className="py-8 px-4 bg-black">
       <div className="container mx-auto max-w-7xl">
+        {/* Enhanced Demo Notice Banner with CTA */}
+        <div className="mb-8 bg-gradient-to-r from-orange-500/20 via-red-500/20 to-purple-500/20 border border-orange-500/30 rounded-xl p-6 backdrop-blur-sm relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-purple-500/5 animate-pulse"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-400/10 to-transparent rounded-full blur-2xl"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-purple-400/10 to-transparent rounded-full blur-xl"></div>
+
+          <div className="relative z-10">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <AlertTriangle className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-orange-400 font-bold text-xl mb-2 flex items-center gap-2">
+                    Demo Trading Platform
+                    <Badge className="bg-orange-500/20 text-orange-300 text-xs px-2 py-1">
+                      SIMULATION
+                    </Badge>
+                  </h3>
+                  <p className="text-orange-200 text-sm leading-relaxed mb-3">
+                    This is a demonstration interface for educational purposes
+                    only. All prices, trades, and account balances are
+                    simulated. No real money or cryptocurrencies are involved in
+                    this demo.
+                  </p>
+                  <div className="flex items-center space-x-2 text-xs text-orange-300">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                    <span>
+                      Live market simulation • Real-time price feeds •
+                      Professional trading tools
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {/* Attractive CTA Button */}
+              <div className="flex-shrink-0">
+                <div className="text-center">
+                  <p className="text-white text-sm font-medium mb-3">
+                    Ready for real trading?
+                  </p>
+                  <Button
+                    className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0 relative overflow-hidden group"
+                    onClick={() =>
+                      window.open(
+                        "https://example-trading-platform.com",
+                        "_blank"
+                      )
+                    }
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative flex items-center space-x-2">
+                      <Zap className="h-5 w-5" />
+                      <span>Try Real Platform</span>
+                      <ArrowUpRight className="h-4 w-4" />
+                    </div>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
           <div>
@@ -302,6 +484,89 @@ export default function TradingPage() {
             </Select>
           </div>
         </div>
+
+        {/* Service Overview Section */}
+        <Card className="mb-8 bg-black border-gray-700/30 backdrop-blur-sm">
+          <CardHeader className="text-center pb-6">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <Info className="h-6 w-6 text-blue-400" />
+              <CardTitle className="text-white text-2xl">
+                What We Offer
+              </CardTitle>
+            </div>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+              Experience the future of cryptocurrency trading with our
+              institutional-grade platform. Built for both beginners and
+              professional traders, we provide the tools, security, and
+              liquidity you need to succeed.
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {serviceFeatures.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-800/30 rounded-xl p-6 border border-gray-600/20 hover:border-gray-500/40 transition-all duration-300 hover:bg-gray-800/50"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div
+                      className={`p-3 rounded-lg bg-gray-700/50 ${feature.color}`}
+                    >
+                      {feature.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-white font-bold text-lg mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm mb-3 leading-relaxed">
+                        {feature.description}
+                      </p>
+                      <div
+                        className={`inline-flex items-center px-3 py-1 rounded-full bg-gray-700/50 ${feature.color} text-sm font-medium`}
+                      >
+                        {feature.stats}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Key Benefits */}
+            <div className="mt-8 pt-8 border-t border-gray-700/30">
+              <h3 className="text-white text-xl font-bold mb-6 text-center">
+                Why Choose Our Platform?
+              </h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-400 mb-2">
+                    0.1%
+                  </div>
+                  <div className="text-gray-300 text-sm">
+                    Starting Trading Fees
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-400 mb-2">
+                    50x
+                  </div>
+                  <div className="text-gray-300 text-sm">Maximum Leverage</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-400 mb-2">
+                    150+
+                  </div>
+                  <div className="text-gray-300 text-sm">Trading Pairs</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-400 mb-2">
+                    24/7
+                  </div>
+                  <div className="text-gray-300 text-sm">Customer Support</div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Price Ticker */}
         <Card className="mb-8 bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
@@ -339,7 +604,6 @@ export default function TradingPage() {
                 <div className="text-white font-bold text-lg">$1.2B</div>
               </div>
             </div>
-
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
               <div>
                 <div className="text-gray-400">24h High</div>
@@ -500,7 +764,6 @@ export default function TradingPage() {
                           ...chartData.map((c) => c.low)
                         );
                         const priceRange = maxPrice - minPrice;
-
                         const wickHeight =
                           ((candle.high - candle.low) / priceRange) * 320;
                         const bodyHeight =
@@ -680,7 +943,6 @@ export default function TradingPage() {
                           />
                         </linearGradient>
                       </defs>
-
                       {/* MA20 Line */}
                       <path
                         d={`M 20,${
@@ -698,7 +960,6 @@ export default function TradingPage() {
                         fill="none"
                         className="drop-shadow-sm"
                       />
-
                       {/* MA50 Line */}
                       <path
                         d={`M 20,${
@@ -772,7 +1033,6 @@ export default function TradingPage() {
                         <div className="text-right">Amount (BTC)</div>
                         <div className="text-right">Total</div>
                       </div>
-
                       {/* Asks */}
                       {orderBook.asks.reverse().map((ask, index) => (
                         <div
@@ -784,7 +1044,6 @@ export default function TradingPage() {
                           <div className="text-right">{ask.total}</div>
                         </div>
                       ))}
-
                       {/* Spread */}
                       <div className="py-2 text-center bg-gray-800/50 rounded-lg border border-gray-600/30">
                         <span className="text-white font-bold text-lg">
@@ -794,7 +1053,6 @@ export default function TradingPage() {
                           Spread: $5.33
                         </div>
                       </div>
-
                       {/* Bids */}
                       {orderBook.bids.map((bid, index) => (
                         <div
@@ -844,359 +1102,187 @@ export default function TradingPage() {
             </Tabs>
           </div>
 
-          {/* Trading Panel */}
+          {/* Educational Content Sidebar */}
           <div className="space-y-6">
-            {/* Order Placement */}
-            <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-white">Place Order</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {/* Order Side */}
-                <div className="grid grid-cols-2 gap-2">
-                  <Button
-                    variant={orderSide === "buy" ? "default" : "outline"}
-                    className={`${
-                      orderSide === "buy"
-                        ? "bg-green-600 hover:bg-green-700 text-white"
-                        : "border-gray-600/30 text-gray-300 bg-transparent hover:bg-gray-800/50"
-                    }`}
-                    onClick={() => setOrderSide("buy")}
-                  >
-                    Buy
-                  </Button>
-                  <Button
-                    variant={orderSide === "sell" ? "default" : "outline"}
-                    className={`${
-                      orderSide === "sell"
-                        ? "bg-red-600 hover:bg-red-700 text-white"
-                        : "border-gray-600/30 text-gray-300 bg-transparent hover:bg-gray-800/50"
-                    }`}
-                    onClick={() => setOrderSide("sell")}
-                  >
-                    Sell
-                  </Button>
-                </div>
-
-                {/* Order Type */}
-                <Select value={orderType} onValueChange={setOrderType}>
-                  <SelectTrigger className="bg-gray-900/80 border-gray-600/30 text-white">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent className="bg-gray-900 border-gray-600">
-                    <SelectItem
-                      value="market"
-                      className="text-white hover:bg-gray-800"
-                    >
-                      Market
-                    </SelectItem>
-                    <SelectItem
-                      value="limit"
-                      className="text-white hover:bg-gray-800"
-                    >
-                      Limit
-                    </SelectItem>
-                    <SelectItem
-                      value="stop"
-                      className="text-white hover:bg-gray-800"
-                    >
-                      Stop
-                    </SelectItem>
-                    <SelectItem
-                      value="stop-limit"
-                      className="text-white hover:bg-gray-800"
-                    >
-                      Stop Limit
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-
-                {/* Leverage */}
-                <div>
-                  <label className="text-gray-400 text-sm">Leverage</label>
-                  <Select value={leverage} onValueChange={setLeverage}>
-                    <SelectTrigger className="bg-gray-900/80 border-gray-600/30 text-white">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent className="bg-gray-900 border-gray-600">
-                      <SelectItem
-                        value="1"
-                        className="text-white hover:bg-gray-800"
-                      >
-                        1x
-                      </SelectItem>
-                      <SelectItem
-                        value="5"
-                        className="text-white hover:bg-gray-800"
-                      >
-                        5x
-                      </SelectItem>
-                      <SelectItem
-                        value="10"
-                        className="text-white hover:bg-gray-800"
-                      >
-                        10x
-                      </SelectItem>
-                      <SelectItem
-                        value="25"
-                        className="text-white hover:bg-gray-800"
-                      >
-                        25x
-                      </SelectItem>
-                      <SelectItem
-                        value="50"
-                        className="text-white hover:bg-gray-800"
-                      >
-                        50x
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {/* Price */}
-                {orderType !== "market" && (
-                  <div>
-                    <label className="text-gray-400 text-sm">
-                      Price (USDT)
-                    </label>
-                    <Input
-                      value={orderPrice}
-                      onChange={(e) => setOrderPrice(e.target.value)}
-                      className="bg-gray-900/80 border-gray-600/30 text-white placeholder:text-gray-500"
-                      placeholder="0.00"
-                    />
+            {/* Platform Features Sidebar */}
+            <div className="space-y-6">
+              {/* Trading Tools */}
+              <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
+                <CardHeader>
+                  <div className="flex items-center space-x-2">
+                    <BarChart3 className="h-5 w-5 text-blue-400" />
+                    <CardTitle className="text-white">
+                      Advanced Trading Tools
+                    </CardTitle>
                   </div>
-                )}
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3">
+                      <div className="p-2 rounded-lg bg-blue-500/20">
+                        <Target className="h-4 w-4 text-blue-400" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-white font-semibold text-sm mb-1">
+                          Professional Charts
+                        </h3>
+                        <p className="text-gray-300 text-xs">
+                          TradingView integration with 100+ indicators
+                        </p>
+                      </div>
+                    </div>
 
-                {/* Amount */}
-                <div>
-                  <label className="text-gray-400 text-sm">Amount (BTC)</label>
-                  <Input
-                    value={orderAmount}
-                    onChange={(e) => setOrderAmount(e.target.value)}
-                    className="bg-gray-900/80 border-gray-600/30 text-white placeholder:text-gray-500"
-                    placeholder="0.00"
-                  />
-                </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="p-2 rounded-lg bg-green-500/20">
+                        <Calculator className="h-4 w-4 text-green-400" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-white font-semibold text-sm mb-1">
+                          Order Types
+                        </h3>
+                        <p className="text-gray-300 text-xs">
+                          Market, Limit, Stop, Stop-Limit orders
+                        </p>
+                      </div>
+                    </div>
 
-                {/* Quick Amount Buttons */}
-                <div className="grid grid-cols-4 gap-2">
-                  {["25%", "50%", "75%", "100%"].map((percent) => (
-                    <Button
-                      key={percent}
-                      variant="outline"
-                      size="sm"
-                      className="border-gray-600/30 text-gray-300 bg-transparent hover:bg-gray-800/50"
-                    >
-                      {percent}
-                    </Button>
-                  ))}
-                </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="p-2 rounded-lg bg-purple-500/20">
+                        <Zap className="h-4 w-4 text-purple-400" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-white font-semibold text-sm mb-1">
+                          Leverage Trading
+                        </h3>
+                        <p className="text-gray-300 text-xs">
+                          Up to 50x leverage on major pairs
+                        </p>
+                      </div>
+                    </div>
 
-                {/* Order Summary */}
-                <div className="bg-gray-800/50 rounded-lg p-3 space-y-2 text-sm border border-gray-600/30">
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Total</span>
-                    <span className="text-white">$0.00</span>
+                    <div className="flex items-start space-x-3">
+                      <div className="p-2 rounded-lg bg-orange-500/20">
+                        <Eye className="h-4 w-4 text-orange-400" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-white font-semibold text-sm mb-1">
+                          Real-time Data
+                        </h3>
+                        <p className="text-gray-300 text-xs">
+                          Live order book and trade history
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Fee</span>
-                    <span className="text-white">$0.00</span>
+                </CardContent>
+              </Card>
+
+              {/* Trading Options */}
+              <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
+                <CardHeader>
+                  <div className="flex items-center space-x-2">
+                    <DollarSign className="h-5 w-5 text-green-400" />
+                    <CardTitle className="text-white">
+                      Trading Options
+                    </CardTitle>
                   </div>
-                </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-lg p-4 border border-green-500/20">
+                    <h3 className="text-white font-bold mb-2 flex items-center gap-2">
+                      <Globe className="h-4 w-4 text-green-400" />
+                      Spot Trading
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-2">
+                      Trade cryptocurrencies with immediate settlement
+                    </p>
+                    <div className="text-green-400 text-xs font-medium">
+                      150+ Trading Pairs
+                    </div>
+                  </div>
 
-                {/* Place Order Button */}
-                <Button
-                  className={`w-full ${
-                    orderSide === "buy"
-                      ? "bg-green-600 hover:bg-green-700"
-                      : "bg-red-600 hover:bg-red-700"
-                  }`}
-                >
-                  {orderSide === "buy" ? "Buy" : "Sell"}{" "}
-                  {selectedPair.split("/")[0]}
-                </Button>
-              </CardContent>
-            </Card>
+                  <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-purple-500/20">
+                    <h3 className="text-white font-bold mb-2 flex items-center gap-2">
+                      <TrendingUp className="h-4 w-4 text-purple-400" />
+                      Futures Trading
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-2">
+                      Trade with leverage and advanced risk management
+                    </p>
+                    <div className="text-purple-400 text-xs font-medium">
+                      Up to 50x Leverage
+                    </div>
+                  </div>
 
-            {/* Account Balance */}
-            <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-white">Account Balance</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Available USDT</span>
-                  <span className="text-white font-bold">25,847.23</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Available BTC</span>
-                  <span className="text-white font-bold">4.18064</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">In Orders</span>
-                  <span className="text-yellow-400 font-bold">$5,234.56</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Total Balance</span>
-                  <span className="text-green-400 font-bold">$125,847.23</span>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-lg p-4 border border-orange-500/20">
+                    <h3 className="text-white font-bold mb-2 flex items-center gap-2">
+                      <Target className="h-4 w-4 text-orange-400" />
+                      Options Trading
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-2">
+                      Advanced derivatives for sophisticated strategies
+                    </p>
+                    <div className="text-orange-400 text-xs font-medium">
+                      Coming Soon
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Platform Security */}
+              <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
+                <CardHeader>
+                  <div className="flex items-center space-x-2">
+                    <Shield className="h-5 w-5 text-green-400" />
+                    <CardTitle className="text-white">
+                      Security & Reliability
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-400 text-sm">
+                        Cold Storage
+                      </span>
+                      <Badge className="bg-green-500/20 text-green-400">
+                        95%
+                      </Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-400 text-sm">
+                        Insurance Coverage
+                      </span>
+                      <span className="text-white font-semibold text-sm">
+                        $100M
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-400 text-sm">Uptime</span>
+                      <span className="text-green-400 font-semibold text-sm">
+                        99.9%
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-400 text-sm">
+                        2FA Security
+                      </span>
+                      <Badge className="bg-blue-500/20 text-blue-400">
+                        Required
+                      </Badge>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-gray-700/30">
+                    <div className="flex items-center space-x-2 text-xs text-gray-400">
+                      <Lock className="h-3 w-3" />
+                      <span>SOC 2 Certified • Regulated Globally</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-        </div>
-
-        {/* Orders and History */}
-        <div className="mt-8">
-          <Tabs defaultValue="open-orders" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-3 bg-gray-900/50 border-gray-700/30">
-              <TabsTrigger
-                value="open-orders"
-                className="text-gray-300 data-[state=active]:bg-gray-800/80 data-[state=active]:text-white"
-              >
-                Open Orders
-              </TabsTrigger>
-              <TabsTrigger
-                value="order-history"
-                className="text-gray-300 data-[state=active]:bg-gray-800/80 data-[state=active]:text-white"
-              >
-                Order History
-              </TabsTrigger>
-              <TabsTrigger
-                value="trade-history"
-                className="text-gray-300 data-[state=active]:bg-gray-800/80 data-[state=active]:text-white"
-              >
-                Trade History
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="open-orders">
-              <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-white">Open Orders</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {openOrders.map((order, index) => (
-                      <div
-                        key={index}
-                        className="bg-gray-800/50 rounded-lg p-4 border border-gray-600/30"
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center space-x-3">
-                            <Badge
-                              className={`${
-                                order.side === "Buy"
-                                  ? "bg-green-500/20 text-green-400"
-                                  : "bg-red-500/20 text-red-400"
-                              }`}
-                            >
-                              {order.side}
-                            </Badge>
-                            <span className="text-white font-medium">
-                              {order.pair}
-                            </span>
-                            <Badge className="bg-gray-700/50 text-gray-300">
-                              {order.type}
-                            </Badge>
-                          </div>
-                          <Badge
-                            className={`${
-                              order.status === "Open"
-                                ? "bg-blue-500/20 text-blue-400"
-                                : "bg-green-500/20 text-green-400"
-                            }`}
-                          >
-                            {order.status}
-                          </Badge>
-                        </div>
-                        <div className="grid grid-cols-4 gap-4 text-sm">
-                          <div>
-                            <div className="text-gray-400">Amount</div>
-                            <div className="text-white">{order.amount}</div>
-                          </div>
-                          <div>
-                            <div className="text-gray-400">Price</div>
-                            <div className="text-white">{order.price}</div>
-                          </div>
-                          <div>
-                            <div className="text-gray-400">Filled</div>
-                            <div className="text-white">{order.filled}</div>
-                          </div>
-                          <div className="text-right">
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              className="border-gray-600/30 text-gray-300 bg-transparent hover:bg-gray-800/50"
-                            >
-                              Cancel
-                            </Button>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="trade-history">
-              <Card className="bg-gray-900/50 border-gray-700/30 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-white">Trade History</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {tradingHistory.map((trade, index) => (
-                      <div
-                        key={index}
-                        className="bg-gray-800/50 rounded-lg p-4 border border-gray-600/30"
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center space-x-3">
-                            <Badge
-                              className={`${
-                                trade.side === "Buy"
-                                  ? "bg-green-500/20 text-green-400"
-                                  : "bg-red-500/20 text-red-400"
-                              }`}
-                            >
-                              {trade.side}
-                            </Badge>
-                            <span className="text-white font-medium">
-                              {trade.pair}
-                            </span>
-                          </div>
-                          <div className="text-right">
-                            <div className="text-green-400 font-bold">
-                              {trade.pnl}
-                            </div>
-                            <div className="text-gray-400 text-sm">
-                              {trade.time}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-4 text-sm">
-                          <div>
-                            <div className="text-gray-400">Amount</div>
-                            <div className="text-white">{trade.amount}</div>
-                          </div>
-                          <div>
-                            <div className="text-gray-400">Price</div>
-                            <div className="text-white">{trade.price}</div>
-                          </div>
-                          <div>
-                            <div className="text-gray-400">Total</div>
-                            <div className="text-white">{trade.total}</div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
         </div>
 
         {/* Trading Features */}

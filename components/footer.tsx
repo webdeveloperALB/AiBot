@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { X, MessageSquare, Send } from "lucide-react";
+import Image from 'next/image';
 
 export function Footer() {
   const footerSections = [
@@ -57,12 +58,15 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-cyan-600 to-pink-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">V</span>
-              </div>
-              <span className="text-white font-bold text-2xl">VINANCE</span>
-            </div>
+            <Link href="/" className="flex items-center pb-6">
+              <Image
+                src="/logo.png"
+                alt="Vinance Logo"
+                width={150}
+                height={40}
+                className="rounded-lg"
+              />
+            </Link>
             <p className="text-gray-300 text-base mb-6">
               Professional trading platform with advanced tools for
               cryptocurrency, forex, and commodities trading.

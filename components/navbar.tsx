@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DollarSign, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -26,11 +27,14 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-cyan-600 to-pink-600">
-              <DollarSign className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-white">VINANCE</span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Vinance Logo"
+              width={150}
+              height={40}
+              className="rounded-lg"
+            />
           </Link>
 
           {/* Desktop Navigation */}
