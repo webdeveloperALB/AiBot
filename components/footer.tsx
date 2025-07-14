@@ -1,7 +1,8 @@
+'use client';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { X, MessageSquare, Send } from "lucide-react";
-import Image from 'next/image';
+import { X, MessageSquare, Send, Mail } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const footerSections = [
@@ -11,7 +12,6 @@ export function Footer() {
         { name: "Futures Trading", href: "/trading" },
         { name: "Crypto Swap", href: "/swap" },
         { name: "Staking", href: "/staking" },
-        { name: "Trading Control Center", href: "/trading-control-center" },
       ],
     },
     {
@@ -20,34 +20,6 @@ export function Footer() {
         { name: "AI Arbitrage", href: "/arbitrage" },
         { name: "Prop Firm", href: "/prop-firm" },
         { name: "Event Markets", href: "/events" },
-        { name: "Portfolio Analytics", href: "/trading-control-center" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { name: "About Us", href: "/about" },
-        { name: "Security", href: "/security" },
-        { name: "Careers", href: "/careers" },
-        { name: "Contact", href: "/contact" },
-      ],
-    },
-    {
-      title: "Support",
-      links: [
-        { name: "Help Center", href: "/help" },
-        { name: "API Documentation", href: "/api-docs" },
-        { name: "Trading Guides", href: "/guides" },
-        { name: "Community", href: "/community" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { name: "Terms of Service", href: "/terms" },
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Risk Disclosure", href: "/risk-disclosure" },
-        { name: "Compliance", href: "/compliance" },
       ],
     },
   ];
@@ -55,98 +27,105 @@ export function Footer() {
   return (
     <footer className="bg-black border-t border-gray-800 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
-          {/* Brand Section */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center pb-6">
-              <Image
-                src="/logo.png"
-                alt="Vinance Logo"
-                width={150}
-                height={40}
-                className="rounded-lg"
-              />
-            </Link>
-            <p className="text-gray-300 text-base mb-6">
-              Professional trading platform with advanced tools for
-              cryptocurrency, forex, and commodities trading.
-            </p>
-            <div className="flex space-x-4">
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-cyan-600 text-white hover:bg-cyan-600/10 hover:text-cyan-300 bg-transparent"
-                aria-label="X"
-              >
-                <X className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-cyan-600 text-white hover:bg-cyan-600/10 hover:text-cyan-300 bg-transparent"
-                aria-label="Discord"
-              >
-                <MessageSquare className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-cyan-600 text-white hover:bg-cyan-600/10 hover:text-cyan-300 bg-transparent"
-                aria-label="Telegram"
-              >
-                <Send className="h-4 w-4" />
-              </Button>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+          {/* Brand Section - Takes up 2 columns on large screens */}
+          <div className="lg:col-span-2">
+            <div className="max-w-md">
+              <Link href="/" className="inline-block mb-6">
+                <Image
+                  src="/logo.png"
+                  alt="WhiteRock Logo"
+                  width={150}
+                  height={40}
+                  className="rounded-lg"
+                />
+              </Link>
+
+              <p className="text-gray-300 text-base leading-relaxed mb-8">
+                Professional trading platform with advanced tools for
+                cryptocurrency, forex, and commodities trading.
+              </p>
+
+              {/* Contact Section */}
+              <div>
+                <h4 className="text-white font-medium text-sm mb-4 uppercase tracking-wide">
+                  Contact Us
+                </h4>
+                <div className="flex space-x-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-cyan-600 text-white hover:bg-cyan-600/10 hover:text-cyan-300 bg-transparent transition-all duration-200"
+                    aria-label="Email Us"
+                    onClick={() =>
+                      (window.location.href = "mailto:support@whiterock24.com")
+                    }
+                  >
+                    <Mail className="h-4 w-4 mr-2" />
+                    support@whiterock24.com
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Footer Links */}
+          {/* Footer Navigation Links */}
           {footerSections.map((section, index) => (
-            <div key={index}>
-              <h3 className="text-white font-semibold text-lg mb-4">
+            <div key={index} className="space-y-4">
+              <h3 className="text-white font-semibold text-lg mb-6 relative">
                 {section.title}
+                <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-cyan-500 to-pink-500 transform translate-y-2"></div>
               </h3>
-              <ul className="space-y-2">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <Link
-                      href={link.href}
-                      className="text-cyan-300 hover:text-pink-300 transition-colors text-base"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <nav>
+                <ul className="space-y-3">
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      <Link
+                        href={link.href}
+                        className="text-gray-300 hover:text-cyan-300 transition-colors duration-200 text-base block py-1"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           ))}
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-base">
-              © 2025 All rights reserved. Trading involves risk and may
-              not be suitable for all investors.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+        {/* Bottom Section */}
+        <div className="border-t border-gray-800 mt-16 pt-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-4 lg:space-y-0">
+            <div className="flex flex-col space-y-2">
+              <p className="text-gray-400 text-sm">
+                © 2025 WhiteRock24. All rights reserved.
+              </p>
+              <p className="text-gray-500 text-xs">
+                Trading involves risk and may not be suitable for all investors.
+              </p>
+            </div>
+
+            <nav className="flex flex-wrap items-center space-x-6">
               <Link
                 href="/terms"
-                className="text-cyan-300 hover:text-pink-300 text-base"
+                className="text-gray-400 hover:text-cyan-300 text-sm transition-colors duration-200"
               >
-                Terms
+                Terms of Service
               </Link>
               <Link
                 href="/privacy"
-                className="text-cyan-300 hover:text-pink-300 text-base"
+                className="text-gray-400 hover:text-cyan-300 text-sm transition-colors duration-200"
               >
-                Privacy
+                Privacy Policy
               </Link>
               <Link
                 href="/risk-disclosure"
-                className="text-cyan-300 hover:text-pink-300 text-base"
+                className="text-gray-400 hover:text-cyan-300 text-sm transition-colors duration-200"
               >
                 Risk Disclosure
               </Link>
-            </div>
+            </nav>
           </div>
         </div>
       </div>

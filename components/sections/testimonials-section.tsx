@@ -215,11 +215,11 @@ export function TestimonialsSection() {
 
                 {/* Author */}
                 <div className="flex items-center space-x-4 pt-6 border-t border-slate-800/50">
-                  <img
+                {/* <img
                     src={testimonial.avatar || "/placeholder.svg"}
                     alt={testimonial.name}
                     className="w-12 h-12 rounded-full object-cover border-2 border-slate-700"
-                  />
+                  /> */}
                   <div>
                     <div className="font-semibold text-white text-sm">
                       {testimonial.name}

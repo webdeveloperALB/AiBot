@@ -510,33 +510,6 @@ export default function EventsPage() {
           </div>
         </div>
 
-        {/* Search and Filter */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
-          <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-            <Input
-              placeholder="Search markets, categories, or topics..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-gray-900/30 border-gray-800/20 text-white"
-            />
-          </div>
-          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-            <SelectTrigger className="w-full md:w-48 bg-gray-900/30 border-gray-800/20 text-white">
-              <Filter className="h-4 w-4 mr-2" />
-              <SelectValue placeholder="All Categories" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Categories</SelectItem>
-              {marketCategories.map((category) => (
-                <SelectItem key={category.id} value={category.id}>
-                  {category.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-
         {/* Enhanced Market Categories */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {marketCategories.map((category) => (

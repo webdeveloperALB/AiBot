@@ -309,39 +309,6 @@ export function FeaturesSection() {
             ))}
           </div>
         </div>
-
-        {/* CTA Section */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-900/20 via-indigo-900/20 to-purple-900/20 border border-blue-500/20 rounded-3xl px-12 py-20 max-w-5xl mx-auto backdrop-blur-sm relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-3xl"></div>
-            <div className="relative">
-              <Badge className="mb-6 bg-blue-500/20 text-blue-300 border border-blue-400/30 text-sm px-6 py-2 rounded-full">
-                Limited Access Program
-              </Badge>
-              <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Join the Next Generation of Trading
-              </h3>
-              <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Access institutional-grade tools, quantitative strategies, and
-                proprietary capital. Built for professionals who demand
-                excellence in every trade.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-lg px-12 py-6 font-semibold rounded-2xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
-                >
-                  Request Access
-                  <ArrowRight className="ml-3 h-5 w-5" />
-                </Button>
-              </div>
-              <p className="text-sm text-slate-500 mt-6">
-                Institutional clients and qualified traders only. Subject to
-                approval.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

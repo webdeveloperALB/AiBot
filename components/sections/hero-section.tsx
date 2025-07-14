@@ -1442,14 +1442,6 @@ export function EnhancedHeroSection() {
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity" />
             </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-gray-600/50 bg-black/30 backdrop-blur-sm text-white px-10 py-6 text-lg font-bold hover:bg-white/10 hover:text-white hover:border-blue-400/50 transition-all duration-300 hover:scale-105"
-            >
-              View Demo
-            </Button>
           </div>
 
           {/* Stats */}
