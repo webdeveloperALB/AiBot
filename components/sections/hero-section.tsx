@@ -1435,12 +1435,15 @@ export function EnhancedHeroSection() {
             <Button
               size="lg"
               className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 px-10 py-6 text-lg font-bold shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-blue-500/25 backdrop-blur-sm"
+              asChild
             >
-              <span className="relative z-10 flex items-center">
-                Launch Platform
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity" />
+              <a href="https://dex.whiterock24.ai/sign-up">
+                <span className="relative z-10 flex items-center">
+                  Launch Platform
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity" />
+              </a>
             </Button>
           </div>
 
@@ -1500,10 +1503,13 @@ export function EnhancedHeroSection() {
                     {description}
                   </p>
 
-                  <div className="flex items-center text-blue-400 font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                  <a
+                    href="https://dex.whiterock24.ai/sign-in"
+                    className="flex items-center text-blue-400 font-semibold group-hover:translate-x-2 transition-transform duration-300"
+                  >
                     Learn more
                     <ArrowRight className="ml-2 w-4 h-4" />
-                  </div>
+                  </a>
                 </CardContent>
               </Card>
             )

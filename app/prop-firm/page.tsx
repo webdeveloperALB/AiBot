@@ -579,10 +579,13 @@ export default function EnhancedPropFirmPage() {
                             ? "bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600"
                             : "bg-slate-800/50 hover:bg-slate-700/50 text-slate-300"
                         }`}
+                        asChild
                       >
-                        {selectedChallenge === challenge.id
-                          ? "Selected Challenge"
-                          : "Select Challenge"}
+                        <a href="https://dex.whiterock24.ai/sign-in">
+                          {selectedChallenge === challenge.id
+                            ? "Selected Challenge"
+                            : "Select Challenge"}
+                        </a>
                       </Button>
                     </CardContent>
                   </Card>

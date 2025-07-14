@@ -212,9 +212,12 @@ export function FeaturesSection() {
                 <Button
                   variant="ghost"
                   className="text-blue-300 hover:text-white hover:bg-blue-500/10 px-0 h-auto text-base font-medium group/btn w-full justify-start"
+                  asChild
                 >
-                  Explore Features
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  <a href="https://dex.whiterock24.ai/sign-in">
+                    Explore Features
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -255,9 +258,12 @@ export function FeaturesSection() {
                 <Button
                   variant="ghost"
                   className="text-blue-300 hover:text-white hover:bg-blue-500/10 px-0 h-auto text-sm font-medium"
+                  asChild
                 >
-                  Learn More
-                  <ArrowRight className="ml-2 h-3 w-3" />
+                  <a href="https://dex.whiterock24.ai/sign-in">
+                    Learn More
+                    <ArrowRight className="ml-2 h-3 w-3" />
+                  </a>
                 </Button>
               </CardContent>
             </Card>

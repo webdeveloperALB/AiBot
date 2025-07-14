@@ -268,16 +268,15 @@ export default function TradingPage() {
                       className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold px-6 sm:px-8 py-2 sm:py-3 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0"
                       onClick={() =>
                         window.open(
-                          "https://example-trading-platform.com",
+                          "https://dex.whiterock24.ai/sign-up",
                           "_blank"
                         )
                       }
                     >
-                      <div className="flex items-center justify-center space-x-2">
                         <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
                         <span>Try Real Platform</span>
                         <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4" />
-                      </div>
+                 
                     </Button>
                   </div>
                 </div>

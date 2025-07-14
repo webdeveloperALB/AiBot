@@ -543,8 +543,11 @@ export default function ArbitragePage() {
                     <div className="text-gray-400 text-xs">Volume Traded</div>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                  Start Trading Now
+                <Button
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  asChild
+                >
+                  <a href="https://dex.whiterock24.ai/sign-in">Start Trading Now</a>
                 </Button>
               </CardContent>
             </Card>

@@ -44,8 +44,6 @@ export function CTASection() {
     },
   ];
 
-
-
   const stats = [
     { value: "500K+", label: "Active Traders" },
     { value: "$2.4B+", label: "Monthly Volume" },
@@ -145,10 +143,14 @@ export function CTASection() {
                     variant="outline"
                     size="lg"
                     className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white px-6 bg-transparent"
+                    asChild
                   >
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Demo
+                    <a href="https://dex.whiterock24.ai/sign-in">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Demo
+                    </a>
                   </Button>
+
                   <Button
                     variant="outline"
                     size="lg"
@@ -170,8 +172,6 @@ export function CTASection() {
             </div>
           </CardContent>
         </Card>
-
-
 
         {/* Bottom Section */}
         <div className="text-center space-y-8">

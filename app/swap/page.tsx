@@ -667,15 +667,22 @@ export default function SwapPage() {
                     demand.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white border-0">
-                      <ArrowRight className="h-4 w-4 mr-2" />
-                      See Real Platform
+                    <Button
+                      className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white border-0"
+                      asChild
+                    >
+                      <a href="https://dex.whiterock24.ai/sign-up">
+                        <ArrowRight className="h-4 w-4 mr-2" />
+                        See Real Platform
+                      </a>
                     </Button>
+
                     <Button
                       variant="outline"
                       className="border-gray-600 text-gray-300 hover:text-white hover:bg-gray-800/50 bg-transparent"
+                      asChild
                     >
-                      Get Professional Access
+                      <a href="https://dex.whiterock24.ai/sign-up">Get Professional Access</a>
                     </Button>
                   </div>
                   <div className="flex items-center justify-center mt-4 text-xs text-gray-400">

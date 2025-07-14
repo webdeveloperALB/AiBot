@@ -348,17 +348,24 @@ export default function PremiumDashboardShowcase() {
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg"
+                asChild
               >
-                <Play className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3" />
-                Watch Live Demo
+                <a href="https://dex.whiterock24.ai/sign-in">
+                  <Play className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3" />
+                  Watch Live Demo
+                </a>
               </Button>
+
               <Button
                 size="lg"
                 variant="outline"
                 className="w-full sm:w-auto border-slate-600 text-slate-300 hover:bg-slate-800/50 px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg bg-transparent hover:text-white"
+                asChild
               >
-                <Calendar className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3" />
-                Schedule Presentation
+                <a href="https://dex.whiterock24.ai/sign-in">
+                  <Calendar className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3" />
+                  Schedule Presentation
+                </a>
               </Button>
             </div>
 
@@ -450,13 +457,13 @@ export default function PremiumDashboardShowcase() {
                     {/* Dashboard Preview Image */}
                     <div className="relative">
                       <img
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/dashboard.png?height=600&width=400"
                         alt="Professional Trading Dashboard Preview"
-                        className="w-full aspect-[3/2] object-cover rounded-b-lg"
+                        className="w-full h-auto rounded-b-lg"
                       />
-                      <div className="absolute top-2 sm:top-4 right-2 sm:right-4 flex items-center space-x-2 bg-black/50 backdrop-blur-sm rounded-full px-2 sm:px-3 py-1">
+                      <div className="absolute top-4 right-4 flex items-center space-x-2 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-green-400 text-xs sm:text-sm font-medium">
+                        <span className="text-green-400 text-sm font-medium">
                           LIVE
                         </span>
                       </div>
@@ -865,17 +872,28 @@ export default function PremiumDashboardShowcase() {
                   <Button
                     size="lg"
                     className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl"
+                    asChild
                   >
-                    Start Free Trial
-                    <ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6 ml-2 sm:ml-3" />
+                    <a href="https://dex.whiterock24.ai/sign-up">
+                      Start Free Trial
+                      <ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6 ml-2 sm:ml-3" />
+                    </a>
                   </Button>
+
                   <Button
                     size="lg"
                     variant="outline"
                     className="w-full sm:w-auto border-slate-600 text-slate-300 hover:bg-slate-800/50 px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl bg-transparent hover:text-white"
+                    asChild
                   >
-                    Schedule Demo
-                    <Calendar className="h-5 w-5 sm:h-6 sm:w-6 ml-2 sm:ml-3" />
+                    <a
+                      href="https://dex.whiterock24.ai/sign-in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Schedule Demo
+                      <Calendar className="h-5 w-5 sm:h-6 sm:w-6 ml-2 sm:ml-3" />
+                    </a>
                   </Button>
                 </div>
                 <div className="mt-6 sm:mt-8 text-slate-400 text-sm sm:text-base">

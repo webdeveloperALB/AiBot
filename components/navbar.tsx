@@ -59,11 +59,12 @@ export function Navbar() {
             <Button
               variant="ghost"
               className="text-cyan-300 hover:text-white hover:bg-cyan-600/10"
+              asChild
             >
-              Sign In
+              <a href="https://dex.whiterock24.ai/sign-in">Sign In</a>
             </Button>
-            <Button className="bg-black">
-              Get Started
+            <Button className="bg-black text-white" asChild>
+              <a href="https://dex.whiterock24.ai/sign-up">Get Started</a>
             </Button>
           </div>
 
@@ -100,9 +101,7 @@ export function Navbar() {
               >
                 Sign In
               </Button>
-              <Button className="bg-transparent">
-                Get Started
-              </Button>
+              <Button className="bg-transparent">Get Started</Button>
             </div>
           </div>
         )}
