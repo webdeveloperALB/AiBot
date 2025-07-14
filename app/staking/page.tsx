@@ -268,24 +268,18 @@ export default function StakingPage() {
                   </h2>
                   <div className="space-y-4 text-gray-300">
                     <p className="text-lg leading-relaxed">
-                      Crypto staking is a process where you lock up your digital
-                      assets to support blockchain network operations and earn
-                      rewards in return. Think of it as earning interest on your
-                      crypto holdings while contributing to network security and
-                      decentralization.
+                      Staking lets you lock your crypto to support blockchain
+                      security while earning rewards — similar to earning
+                      interest on your holdings.
                     </p>
                     <p className="leading-relaxed">
-                      When you stake your tokens with our platform, you're
-                      participating in the proof-of-stake consensus mechanism
-                      that validates transactions and secures the network. In
-                      exchange for this contribution, you receive staking
-                      rewards distributed daily directly to your account.
+                      By staking with us, you participate in network validation
+                      and receive daily rewards, without managing complex
+                      infrastructure.
                     </p>
                     <p className="leading-relaxed">
-                      Our institutional-grade infrastructure handles all the
-                      technical complexities, allowing you to earn passive
-                      income without the need to run your own validator nodes or
-                      worry about technical maintenance.
+                      Our platform handles all technical operations, offering
+                      you a seamless way to earn passive income through staking.
                     </p>
                   </div>
                 </div>

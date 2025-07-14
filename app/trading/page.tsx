@@ -567,7 +567,7 @@ export default function TradingPage() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-gray-600/30 text-gray-300 bg-transparent hover:bg-gray-800/50 text-xs h-7 sm:h-8 px-2 sm:px-3"
+                        className="border-gray-600/30 text-gray-300 bg-transparent hover:bg-gray-800/50 hover:text-white text-xs h-7 sm:h-8 px-2 sm:px-3"
                       >
                         Tools
                       </Button>
