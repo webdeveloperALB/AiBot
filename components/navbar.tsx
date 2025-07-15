@@ -56,16 +56,65 @@ export function Navbar() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              className="text-cyan-300 hover:text-white hover:bg-cyan-600/10"
-              asChild
-            >
-              <a href="https://dex.whiterock24.ai/sign-in">Sign In</a>
-            </Button>
-            <Button className="bg-black text-white" asChild>
-              <a href="https://dex.whiterock24.ai/sign-up">Get Started</a>
-            </Button>
+            {/* Robot Trading */}
+            <div className="relative group">
+              <Button
+                variant="ghost"
+                className="text-cyan-300 hover:text-white hover:bg-cyan-600/10"
+                asChild
+              >
+                <a href="https://account.whiterock24.ai/register">
+                  Robot Trading
+                </a>
+              </Button>
+
+              <div
+                className="absolute left-0 top-full mt-1 w-48 bg-black/80 rounded-lg shadow-xl 
+            opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none 
+            transition-all duration-300 ease-in-out z-20"
+              >
+                <a
+                  href="https://account.whiterock24.ai/login"
+                  className="block px-4 py-2 text-gray-200 hover:bg-gray-700 hover:text-white"
+                >
+                  Sign In
+                </a>
+                <a
+                  href="https://account.whiterock24.ai/register"
+                  className="block px-4 py-2 text-gray-200 hover:bg-gray-700 hover:text-white"
+                >
+                  Sign Up
+                </a>
+              </div>
+            </div>
+
+            {/* Trading Platform */}
+            <div className="relative group">
+              <Button className="bg-black text-white" asChild>
+                <a href="https://dex.whiterock24.ai/sign-up">
+                  Trading Platform
+                </a>
+              </Button>
+
+              <div
+                className="absolute left-0 top-full mt-1 w-48 bg-black/80 rounded-lg shadow-xl 
+            opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none 
+            transition-all duration-300 ease-in-out z-20"
+              >
+                <a
+                  href="https://dex.whiterock24.ai/sign-in"
+                  className="block px-4 py-2 text-gray-200 hover:bg-gray-700 hover:text-white"
+                >
+                  Sign In
+                </a>
+                <a
+                  href="https://dex.whiterock24.ai/sign-up"
+                  className="block px-4 py-2 text-gray-200 hover:bg-gray-700 hover:text-white"
+                >
+                  Sign Up
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
