@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { DollarSign, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -67,21 +67,22 @@ export function Navbar() {
                   Robot Trading
                 </a>
               </Button>
-
+              {/* Invisible bridge to prevent gap */}
+              <div className="absolute left-0 top-full w-full h-2 bg-transparent group-hover:block hidden" />
               <div
-                className="absolute left-0 top-full mt-1 w-48 bg-black/80 rounded-lg shadow-xl 
-            opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none 
-            transition-all duration-300 ease-in-out z-20"
+                className="absolute left-0 top-full w-36 bg-black/90 rounded-lg shadow-xl border border-gray-700
+                opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                transition-all duration-200 ease-in-out z-20 mt-2"
               >
                 <a
                   href="https://account.whiterock24.ai/login"
-                  className="block px-4 py-2 text-gray-200 hover:bg-gray-700 hover:text-white"
+                  className="block px-4 py-3 text-gray-200 hover:bg-gray-700 hover:text-white first:rounded-t-lg transition-colors"
                 >
                   Sign In
                 </a>
                 <a
                   href="https://account.whiterock24.ai/register"
-                  className="block px-4 py-2 text-gray-200 hover:bg-gray-700 hover:text-white"
+                  className="block px-4 py-3 text-gray-200 hover:bg-gray-700 hover:text-white last:rounded-b-lg transition-colors"
                 >
                   Sign Up
                 </a>
@@ -90,26 +91,30 @@ export function Navbar() {
 
             {/* Trading Platform */}
             <div className="relative group">
-              <Button className="bg-black text-white" asChild>
+              <Button
+                className="bg-black text-white border border-gray-700 hover:bg-gray-900"
+                asChild
+              >
                 <a href="https://dex.whiterock24.ai/sign-up">
                   Trading Platform
                 </a>
               </Button>
-
+              {/* Invisible bridge to prevent gap */}
+              <div className="absolute left-0 top-full w-full h-2 bg-transparent group-hover:block hidden" />
               <div
-                className="absolute left-0 top-full mt-1 w-48 bg-black/80 rounded-lg shadow-xl 
-            opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none 
-            transition-all duration-300 ease-in-out z-20"
+                className="absolute left-0 top-full w-36 bg-black/90 rounded-lg shadow-xl border border-gray-700
+                opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                transition-all duration-200 ease-in-out z-20 mt-2"
               >
                 <a
                   href="https://dex.whiterock24.ai/sign-in"
-                  className="block px-4 py-2 text-gray-200 hover:bg-gray-700 hover:text-white"
+                  className="block px-4 py-3 text-gray-200 hover:bg-gray-700 hover:text-white first:rounded-t-lg transition-colors"
                 >
                   Sign In
                 </a>
                 <a
                   href="https://dex.whiterock24.ai/sign-up"
-                  className="block px-4 py-2 text-gray-200 hover:bg-gray-700 hover:text-white"
+                  className="block px-4 py-3 text-gray-200 hover:bg-gray-700 hover:text-white last:rounded-b-lg transition-colors"
                 >
                   Sign Up
                 </a>

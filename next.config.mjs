@@ -9,8 +9,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // disable build-time font optimization
-  optimizeFonts: false,
 };
 
 export default nextConfig;
